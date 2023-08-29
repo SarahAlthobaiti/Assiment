@@ -52,7 +52,7 @@ public class SinglyLinkedList<E>{
 
     }
 
-    public void InsertMiddle(E head, E e){
+   /*  public void InsertMiddle(E head, E e){
 
         Node<E> newest = new Node<>(e,null);
         if(isEmpty()){
@@ -73,6 +73,14 @@ public class SinglyLinkedList<E>{
 
        
 
+    }*/
+    public void printList() {
+        Node<E> current = head;
+        while (current != null) {
+            System.out.print(current.getElement() + " ");
+            current = current.getNext();
+        }
+        System.out.println();
     }
     
     public void addLast(E e){
@@ -81,7 +89,7 @@ public class SinglyLinkedList<E>{
             head = newest;
         }else{
             tail.setNext(newest);
-            tail = nwest;
+            tail = newest;
             size++;
         }
 
@@ -97,5 +105,20 @@ public class SinglyLinkedList<E>{
         }
         return answer;
     }
+   /*  public void removeLast(){
+        if(isEmpty()) return ;
+        else if (head.next == null){
+            head = null;
+        }
+        else{
+            Node<E> c = head;
+            while(c.next.next != null){
+                c = c.next;
+            }
+            c = c.next;
+            c.next = null;
+        }
+    }*/
+
 
 }
