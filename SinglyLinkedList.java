@@ -41,6 +41,43 @@ public class SinglyLinkedList<E> {
         if(isEmpty()) return null;
         return tail.getElement();
     }
+
+    //////////////////////////////////
+    public void addFirst(E e){
+        head = new Node<>(e, head);
+        if (size == 0){
+            tail = head;
+            size ++;
+        }
+
+    }
+
+    public void InsertMiddle(E head, E e){
+        Node<E> newest = new Node<>(e,head);
+
+    }
     
+    public void addLast(E e){
+        Node<E> newest = new Node<>(e,null);
+        if(isEmpty()){
+            head = newest;
+        }else{
+            tail.setNext(newest);
+            tail = nwest;
+            size++;
+        }
+
+    }
+
+    public E removeFirst(){
+        if(isEmpty()) return null;
+        E answer = head.getElement();
+        head = head.getNext();
+        size --;
+        if(size == 0){
+         tail = null;
+        }
+        return answer;
+    }
 
 }
