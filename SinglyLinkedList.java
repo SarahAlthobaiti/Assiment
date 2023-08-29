@@ -1,4 +1,4 @@
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E>{
 
     private static class Node<E> {
         private E element;
@@ -10,7 +10,7 @@ public class SinglyLinkedList<E> {
             next = n;
         }
 
-        puplic E getElement(){
+        public E getElement(){
             return element;
         }
 
@@ -53,7 +53,25 @@ public class SinglyLinkedList<E> {
     }
 
     public void InsertMiddle(E head, E e){
-        Node<E> newest = new Node<>(e,head);
+
+        Node<E> newest = new Node<>(e,null);
+        if(isEmpty()){
+            head = newest;
+        }else if(newest.element > head.element){
+            addFirst(e);
+        }else{
+            Node<E> c = head;
+            while(c != null){
+                if(newest.element.compareTo( c.next.element) > 0){
+                    c = c.next;
+
+                }
+                newest.next = c.next;
+                c.next = newest;
+            }
+        }
+
+       
 
     }
     
