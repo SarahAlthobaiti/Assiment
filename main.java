@@ -6,8 +6,11 @@ public class main {
         myList.addFirst(10);
         myList.addLast(30);
         myList.addLast(40);
+        myList.removeLast();
+        //myList.InsertMiddle(20);
         
         myList.printList();
+       //System.out.println(myList)
 
 
     }

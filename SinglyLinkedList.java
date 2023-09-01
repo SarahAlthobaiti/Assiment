@@ -1,4 +1,4 @@
-public class SinglyLinkedList<E>{
+public class SinglyLinkedList<E extends Comparable<E>>{
 
     private static class Node<E> {
         private E element;
@@ -30,6 +30,9 @@ public class SinglyLinkedList<E>{
     public int size(){
         return size;
     }
+    public Node<E> getHead(){
+        return head;
+    }
     public boolean isEmpty(){
         return size == 0 ;
     }
@@ -52,28 +55,33 @@ public class SinglyLinkedList<E>{
 
     }
 
-   /*  public void InsertMiddle(E head, E e){
+   /*  public void InsertMiddle( E e){
 
         Node<E> newest = new Node<>(e,null);
         if(isEmpty()){
             head = newest;
-        }else if(newest.element > head.element){
+        }else if(newest.getElement().compareTo( head.getElement()) < 0 ){
             addFirst(e);
         }else{
             Node<E> c = head;
             while(c != null){
-                if(newest.element.compareTo( c.next.element) > 0){
-                    c = c.next;
+                if(newest.getElement().compareTo( c.getNext().getElement()) > 0){
+                    c = c.getNext();
+                    
+                    
 
                 }
-                newest.next = c.next;
-                c.next = newest;
+                  newest.setNext(c.getNext());
+                  c.setNext(newest);
+                  size++;
+
             }
         }
 
        
 
     }*/
+
     public void printList() {
         Node<E> current = head;
         while (current != null) {
@@ -105,20 +113,22 @@ public class SinglyLinkedList<E>{
         }
         return answer;
     }
-   /*  public void removeLast(){
-        if(isEmpty()) return ;
-        else if (head.next == null){
+    public void removeLast() {
+        if (isEmpty()) {
+            return;
+        } else if (head.getNext() == null) {
             head = null;
-        }
-        else{
+            tail = null;
+        } else {
             Node<E> c = head;
-            while(c.next.next != null){
-                c = c.next;
+            while (c.getNext().getNext() != null) {
+                c = c.getNext();
             }
-            c = c.next;
-            c.next = null;
+            c.setNext(null);
+            tail = c;
         }
-    }*/
+        size--;
+    }
 
 
 }
