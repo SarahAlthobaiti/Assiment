@@ -130,5 +130,31 @@ public class SinglyLinkedList<E extends Comparable<E>>{
         size--;
     }
 
+    public void deleteMiddile(E key){
+
+        if( head == null){
+            return;
+        }
+        Node<E> temp;
+        
+        if(head.getElement() == key){
+            temp = head;
+            head = head.getNext();
+            temp = null;
+           
+        }
+        else{
+             Node<E> c = head;
+            while(c.getNext().getElement()!= key){
+                c = c.getNext();
+            }
+            if(c.getNext() != null){
+                temp = c.getNext();
+                c.getNext().setNext(temp.getNext());
+            }
+        }
+
+    }
+
 
 }

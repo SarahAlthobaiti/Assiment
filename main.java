@@ -7,6 +7,8 @@ public class main {
         myList.addLast(30);
         myList.addLast(40);
         myList.removeLast();
+        myList.deleteMiddile(30);
+
         //myList.InsertMiddle(20);
         
         myList.printList();
