@@ -7,8 +7,12 @@ public class main {
         myList.addLast(30);
         myList.addFirst(5);
         myList.addLast(40);
+        myList.addLast(50);
+        myList.removeFirst();
         myList.removeLast();
-       // myList.deleteMiddile(10);
+        myList.deleteMiddile(30);
+     ///////////////////////////////
+
        // myList.InsertMiddle(20);
        
         
