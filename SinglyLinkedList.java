@@ -48,12 +48,13 @@ public class SinglyLinkedList<E extends Comparable<E>>{
         head = new Node<>(e, head);
         if (size == 0){
             tail = head;
-            size ++;
+           
         }
+         size ++;
 
     }
 
-   /*  public void InsertMiddle( E e){
+    /*public void InsertMiddle( E e){
 
         Node<E> newest = new Node<>(e,null);
         if(isEmpty()){
@@ -69,11 +70,12 @@ public class SinglyLinkedList<E extends Comparable<E>>{
                     
 
                 }
-                  newest.setNext(c.getNext());
-                  c.setNext(newest);
-                  size++;
+                 
 
             }
+             newest.setNext(c.getNext());
+             c.setNext(newest);
+             size++;
         }
 
        
@@ -96,8 +98,9 @@ public class SinglyLinkedList<E extends Comparable<E>>{
         }else{
             tail.setNext(newest);
             tail = newest;
-            size++;
+            
         }
+        size++;
 
     }
 

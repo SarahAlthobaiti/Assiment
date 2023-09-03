@@ -9,7 +9,7 @@ public class main {
         myList.addLast(40);
         myList.removeLast();
        // myList.deleteMiddile(10);
-        // myList.InsertMiddle(3);
+       // myList.InsertMiddle(20);
        
         
         myList.print();
