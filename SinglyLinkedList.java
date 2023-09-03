@@ -30,19 +30,17 @@ public class SinglyLinkedList<E extends Comparable<E>>{
     public int size(){
         return size;
     }
-    public Node<E> getHead(){
-        return head;
-    }
+    
     public boolean isEmpty(){
         return size == 0 ;
     }
     public E first(){
         if(isEmpty()) return null;
-        return head.getElement();
+        return (E)head.getElement();
     }
     public E last(){
         if(isEmpty()) return null;
-        return tail.getElement();
+        return (E)tail.getElement();
     }
 
     //////////////////////////////////
@@ -82,11 +80,11 @@ public class SinglyLinkedList<E extends Comparable<E>>{
 
     }*/
 
-    public void printList() {
-        Node<E> current = head;
-        while (current != null) {
-            System.out.print(current.getElement() + " ");
-            current = current.getNext();
+    public void print() {
+        Node<E> c = head;
+        while (c != null) {
+            System.out.print(c.getElement() + " ");
+            c = c.getNext();
         }
         System.out.println();
     }
@@ -130,7 +128,7 @@ public class SinglyLinkedList<E extends Comparable<E>>{
         size--;
     }
 
-    public void deleteMiddile(E key){
+   /*  public void deleteMiddile(E key){
 
         if( head == null){
             return;
@@ -154,7 +152,7 @@ public class SinglyLinkedList<E extends Comparable<E>>{
             }
         }
 
-    }
+    }*/
 
 
 }
